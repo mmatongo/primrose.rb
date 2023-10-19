@@ -1,0 +1,13 @@
+<%# templates/components/text_field.prim.erb %>
+<% if @label %>
+  <label for="textfield"><%= @label %></label>
+<% end %>
+<input type="text"
+       name="<%= @name %>"
+       placeholder="<%= @placeholder %>"
+       <% if @min_length %> minlength="<%= @min_length %>" <% end %>
+       <% if @max_length %> maxlength="<%= @max_length %>" <% end %>
+       <% if @read_only %> readonly <% end %>
+       <% if @default_value %> value="<%= @default_value %>" <% end %>
+       <% if @style_class %> class="<%= @style_class %>" <% end %>
+>

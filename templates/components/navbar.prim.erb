@@ -1,0 +1,18 @@
+<%# templates/components/navbar.prim.erb %>
+<nav class="<%= 'sticky' if @sticky %>">
+  <%= @brand if @brand %>
+  <ul>
+    <% @links.each do |link| %>
+      <li class="<%= 'active' if link[:url] == @active_link %>">
+        <a href="<%= link[:url] %>"><%= link[:text] %></a>
+        <% if link[:dropdown] %>
+          <ul class="dropdown">
+            <% link[:dropdown].each do |dropdown_link| %>
+              <li><a href="<%= dropdown_link[:url] %>"><%= dropdown_link[:text] %></a></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</nav>

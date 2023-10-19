@@ -1,0 +1,10 @@
+<%# templates/components/button.prim.erb %>
+<button
+  onclick="<%= @action %>"
+  class="<%= @style %>"
+  <%= 'disabled' if @disabled %>
+  <%= 'loading' if @loading %>
+>
+  <%= @label %>
+</button>
+
