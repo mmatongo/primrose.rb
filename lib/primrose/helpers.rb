@@ -1,6 +1,7 @@
 require_relative 'components/button'
 require_relative 'components/navbar'
 require_relative 'components/text_field'
+require_relative 'components/checkbox'
 
 module Primrose
   module Helpers
@@ -29,6 +30,10 @@ module Primrose
 
     def text_field(placeholder:, **opts)
       component('TextField', placeholder: placeholder, **opts)
+    end
+
+    def checkbox(label:, checked: false, **opts)
+      component('Checkbox', label: label, checked: checked, **opts)
     end
   end
 end

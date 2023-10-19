@@ -1,0 +1,5 @@
+<%# templates/partials/_checkbox.html.erb %>
+<div class="checkbox">
+  <input type="checkbox" id="<%= @id %>" name="<%= @name %>" onchange="handleCheckboxChange(this)" <% 'checked' if @checked %> />
+  <label for="<%= @id %>"><%= @label %></label>
+</div>

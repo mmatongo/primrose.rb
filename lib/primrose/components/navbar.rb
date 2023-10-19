@@ -4,8 +4,8 @@ module Primrose
   module Components
     class Navbar < Rose
       def initialize(*args, links:, active_link: nil, sticky: false, brand: nil)
-        puts "Non-keyword args: #{args.inspect}"
-        puts "Initializing Navbar with #{links.inspect}, #{active_link}, #{sticky}, #{brand}"
+        # puts "Non-keyword args: #{args.inspect}"
+        # puts "Initializing Navbar with #{links.inspect}, #{active_link}, #{sticky}, #{brand}"
         @links = links
         @active_link = active_link
         @sticky = sticky
