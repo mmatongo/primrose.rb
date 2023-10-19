@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    ul {
+      width: 80%;
+      margin: 50px auto;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+
+    #about-content {
+      width: 80%;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>About</h1>
+
+  <!-- Using Navbar component -->
+  <%= navbar(links: [{ url: '/', text: 'Home' }, { url: '/about', text: 'About' }]) %>
+
+  <div id="about-content">
+    <p>Welcome to our Todo List application. This application allows you to keep track of your tasks in a simple and intuitive way.</p>
+    <p>Feel free to add, mark as complete, or delete any tasks. We hope this tool helps you stay organized and productive!</p>
+  </div>
+</body>
+</html>

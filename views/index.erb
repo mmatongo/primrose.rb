@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      height: 40px;
+      padding: 0 20px;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      height: 44px;
+      background-color: #5C7AEA;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 0 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4055B2;
+    }
+
+    ul {
+      width: 80%;
+      margin: 50px auto;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+
+    #todo-list li {
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Todo List</h1>
+
+  <!-- Using Navbar component -->
+  <%= navbar(links: [{ url: '/', text: 'Home' }, { url: '/about', text: 'About' }]) %>
+
+  <!-- Form to add new todo -->
+  <form action="/add_todo" method="post">
+    <%= text_field(name: 'new_todo', placeholder: 'Enter new todo') %> <!-- Using TextField component -->
+    <%= button(label: 'Add Todo', action: 'this.form.submit()') %> <!-- Using Button component -->
+  </form>
+
+  <ul id="todo-list">
+    <% @todos.each_with_index do |todo, index| %>
+      <li>
+        <%= checkbox(label: '', checked: todo[:completed], id: "todo_#{index}", name: "todo_#{index}") %>
+        <%= todo[:text] %>
+      </li>
+    <% end %>
+  </ul>
+</body>
+</html>
