@@ -1,4 +1,4 @@
-require_relative 'utils/deep_clone'
+require_relative 'utils/utils'
 
 module Primrose
   class Observable
