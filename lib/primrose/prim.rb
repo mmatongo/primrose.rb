@@ -6,8 +6,8 @@ module Primrose
     @template_cache = {}
     @logger = Logger.new(STDOUT)
 
-    def self.render(template_path, context)
-      template = read_template(template_path)
+    def self.render(template, context)
+      # template = read_template(template_path)
       erb = ERB.new(template)
       rendered = erb.result(context.get_binding)
 
@@ -20,11 +20,11 @@ module Primrose
 
     private
 
-    def self.read_template(template_path)
-      @template_cache[template_path] ||= File.read(template_path)
-    rescue => e
-      @logger.error("Could not read template: #{e.message}")
-      raise
-    end
+    # def self.read_template(template_path)
+    #   @template_cache[template_path] ||= File.read(template_path)
+    # rescue => e
+    #   @logger.error("Could not read template: #{e.message}")
+    #   raise
+    # end
   end
 end

@@ -3,6 +3,14 @@ require_relative '../prim'
 module Primrose
   module Components
     class Checkbox < Rose
+      TEMPLATE = <<~ERB
+        <div class="checkbox">
+          <input type="checkbox" id="<%= @id %>" name="<%= @name %>" onchange="<%= @js %>" <%= 'checked="checked"' if @checked %> />
+          <label for="<%= @id %>"><%= @label %></label>
+        </div>
+      ERB
+
+
       def initialize(label:, checked: false, id: nil, name: nil, js: nil)
         @label = label
         @checked = checked
@@ -13,7 +21,7 @@ module Primrose
       end
 
       def render
-        Prim.render('templates/partials/_checkbox.prim.erb', self)
+        Prim.render(TEMPLATE, self)
       end
 
       def set_checked(value)
