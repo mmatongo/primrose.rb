@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.description = "Build reactive web applications with observable data structures and components"
   s.authors     = ["Daniel M. Matongo"]
   s.email       = 'mmatongo_@hotmail.com'
-  s.files       = Dir['lib/**/*.rb', 'templates/**/*e.rb', 'LICENSE', 'README.md']
+  s.files       = Dir['lib/**/*.rb', 'templates/**/*.erb', 'LICENSE', 'README.md']
   s.homepage    = 'https://github.com/mmatongo/primrose.rb'
   s.license     = 'MIT'
   s.add_dependency 'erb', '~> 4.0'
